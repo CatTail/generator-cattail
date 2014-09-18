@@ -1,5 +1,7 @@
 # generator-cattail
 
+My personal secretary
+
 ## Installation
 
     npm install generator-cattail
