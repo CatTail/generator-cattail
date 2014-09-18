@@ -14,6 +14,11 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
     var done = this.async();
     this.prompt([{
       type: 'input',
+      name: 'repo',
+      message: 'Repo',
+      default: this.name
+    }, {
+      type: 'input',
       name: 'description',
       message: 'Description'
     }, {

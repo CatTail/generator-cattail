@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "description": "<%= description %>",
-  "repository": "<%= org %>/<%= name %>",
+  "repository": "<%= org %>/<%= repo %>",
   "version": "0.0.1",
   "keywords": [
   ],
