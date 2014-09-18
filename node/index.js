@@ -44,7 +44,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
 
     this.template('LICENSE', 'LICENSE', this.data);
     this.template('Readme.md', 'Readme.md', this.data);
-    this.template('package.json', 'package.json', this.data);
+    this.template('_package.json', 'package.json', this.data);
 
     this.mkdir('test');
   },
