@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-cattail' ]; then cd .. && eval "mv $currentfolder generator-cattail" && cd generator-cattail; fi
+
