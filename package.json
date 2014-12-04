@@ -1,6 +1,6 @@
 {
   "name": "generator-cattail",
-  "version": "0.2.7",
+  "version": "1.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -18,7 +18,8 @@
   },
   "files": [
     "app",
-    "node"
+    "node",
+    "golang"
   ],
   "keywords": [
     "yeoman-generator"
