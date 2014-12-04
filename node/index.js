@@ -57,7 +57,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         shell.exec(util.format('git remote add origin git@github.com:%s.git',
                                this.data.orgrepo));
         this.copy('_gitignore', '.gitignore');
-        shell.exec(util.format('git create %s', this.data.orgrepo));
+        shell.exec(util.format('zsh;git create %s', this.data.orgrepo));
     },
 
     deps: function() {
