@@ -2,7 +2,7 @@
   "name": "<%= name %>",
   "description": "<%= description %>",
   "repository": "<%= org %>/<%= repo %>",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "keywords": [
   ],
   "files": [
