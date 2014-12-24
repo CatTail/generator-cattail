@@ -11,7 +11,7 @@ My personal secretary
 
 Generate node package hosted in github
 
-    yo cattail:node
+    yo cattail:node packageName
 
 
 ## License

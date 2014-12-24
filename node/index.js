@@ -43,6 +43,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
 
         this.copy('History.md', 'History.md');
         this.copy('_travis.yml', '.travis.yml');
+        this.copy('_jshintrc', '.jshintrc');
         this.copy('index.js', 'index.js');
 
         this.template('LICENSE', 'LICENSE', this.data);
@@ -56,7 +57,11 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         shell.exec('git init');
         shell.exec(util.format('git remote add origin git@github.com:%s.git',
                                this.data.orgrepo));
+
         this.copy('_gitignore', '.gitignore');
+        this.copy('githooks.json', 'githooks.json');
+        this.directory('githooks', 'githooks');
+
         shell.exec(util.format('git create %s', this.data.orgrepo));
     },
 
