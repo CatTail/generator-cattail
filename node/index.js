@@ -62,6 +62,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         this.copy('githooks.json', 'githooks.json');
         this.directory('githooks', 'githooks');
 
+        shell.exec('git hooks install');
         shell.exec(util.format('hub create %s', this.data.orgrepo));
     },
 
