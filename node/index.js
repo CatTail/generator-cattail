@@ -21,6 +21,11 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
             type: 'input',
             name: 'description',
             message: 'Description'
+        }, {
+            type: 'confirm',
+            name: 'publish',
+            message: 'Is publish',
+            default: true
         }], function(answers) {
             var orgrepo = answers.orgrepo.split('/');
             answers.org = orgrepo[0];
@@ -55,15 +60,17 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
 
     git: function() {
         shell.exec('git init');
-        shell.exec(util.format('git remote add origin git@github.com:%s.git',
-                               this.data.orgrepo));
+        if (this.data.publish) {
+            shell.exec(util.format('git remote add origin git@github.com:%s.git',
+                                   this.data.orgrepo));
+            shell.exec(util.format('hub create %s', this.data.orgrepo));
+        }
 
         this.copy('_gitignore', '.gitignore');
         this.copy('githooks.json', 'githooks.json');
         this.directory('githooks', 'githooks');
 
         shell.exec('git hooks install');
-        shell.exec(util.format('hub create %s', this.data.orgrepo));
     },
 
     deps: function() {
