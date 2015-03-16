@@ -56,6 +56,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         this.template('_package.json', 'package.json', this.data);
 
         this.mkdir('test');
+        this.mkdir('test/fixtures');
     },
 
     git: function() {
