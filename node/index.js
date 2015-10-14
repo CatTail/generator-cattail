@@ -16,7 +16,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
             type: 'input',
             name: 'orgrepo',
             message: 'Org/Repo',
-            default: 'CatTail/' + this.name
+            default: 'CatTail/node-' + this.name
         }, {
             type: 'input',
             name: 'description',
