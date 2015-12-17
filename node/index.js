@@ -43,8 +43,8 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
     },
 
     node: function () {
-        this.mkdir(this.data.name);
-        process.chdir(this.data.name);
+        this.mkdir('node-' + this.data.name);
+        process.chdir('node-' + this.data.name);
 
         this.copy('History.md', 'History.md');
         this.copy('_travis.yml', '.travis.yml');
