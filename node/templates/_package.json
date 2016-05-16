@@ -3,6 +3,7 @@
     "description": "<%= description %>",
     "repository": "<%= org %>/<%= repo %>",
     "version": "0.0.0",
+    "main": "dist/index.js",
     "keywords": [
     ],
     "files": [
@@ -27,7 +28,7 @@
     },
     "scripts": {
         "debug": "./node_modules/.bin/mocha --debug-brk --require should test",
-        "build": "babel src -d dist",
+        "build": "babel src -d dist --copy-files",
         "lint": "eslint .",
         "test": "NODE_ENV=test babel-node ./node_modules/.bin/_mocha --reporter spec $npm_package_options_mocha",
         "test-cov": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report html _mocha -- $npm_package_options_mocha",

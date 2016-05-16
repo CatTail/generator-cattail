@@ -70,7 +70,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         this.template('_package.json', 'package.json', this.data)
         this.copy('_travis.yml', '.travis.yml')
         this.copy('History.md', 'History.md')
-        this.copy('index.js', 'index.js')
+        this.copy('index.js', 'src/index.js')
         this.template('LICENSE', 'LICENSE', this.data)
         this.template('Readme.md', 'Readme.md', this.data)
 
