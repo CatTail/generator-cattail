@@ -32,7 +32,8 @@
         "lint": "eslint .",
         "test": "NODE_ENV=test babel-node ./node_modules/.bin/_mocha --reporter spec $npm_package_options_mocha",
         "test-cov": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report html _mocha -- $npm_package_options_mocha",
-        "test-travis": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report lcovonly _mocha -- $npm_package_options_mocha"
+        "test-travis": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report lcovonly _mocha -- $npm_package_options_mocha",
+        "preversion": "npm run build"
     },
     "options": {
         "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace src/**/__tests__/**/*-test.js"
