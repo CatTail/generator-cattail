@@ -36,6 +36,6 @@
         "preversion": "npm run build"
     },
     "options": {
-        "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace src/**/__tests__/**/*-test.js"
+        "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace src/**/*.spec.js"
     }
 }
