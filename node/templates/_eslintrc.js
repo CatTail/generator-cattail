@@ -1,10 +1,6 @@
 module.exports = {
     "parser": "babel-eslint",
 
-    "globals": {
-        "should": true
-    },
-
     "plugins": [
         "babel"
     ],
@@ -119,7 +115,7 @@ module.exports = {
         "no-fallthrough": 2,
         "no-floating-decimal": 2,
         "no-func-assign": 2,
-        "no-implicit-coercion": 2,
+        "no-implicit-coercion": [2, {boolean: false}],
         "no-implied-eval": 2,
         "no-inline-comments": 0,
         "no-inner-declarations": [2, "functions"],

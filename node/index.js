@@ -47,7 +47,7 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         process.chdir('node-' + this.data.name)
     },
 
-    git() {
+    pregit() {
         shell.exec('git init')
         if (this.data.publish) {
             shell.exec(util.format('git remote add origin git@github.com:%s.git',
@@ -55,12 +55,9 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
             shell.exec(util.format('hub create -d "%s" %s',
                                    this.data.description, this.data.orgrepo))
         }
-
-        shell.exec('git hooks install')
     },
 
     skeleton() {
-        this.directory('githooks', 'githooks')
         this.directory('resources', 'resources')
         this.copy('_babelrc', '.babelrc')
         this.copy('_editorconfig', '.editorconfig')
@@ -82,6 +79,21 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         this.installDependencies()
     },
 
+    end: {
+        postgit() {
+            if (this.data.publish) {
+                shell.exec('git add .')
+                shell.exec('git commit -m "Initial commit"')
+                shell.exec('git push origin master')
+            }
+        },
+
+        travis() {
+            if (this.data.publish) {
+                shell.exec('travis init node.js --no-interactive')
+            }
+        },
+    },
 })
 
 module.exports = CattailGenerator

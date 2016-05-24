@@ -17,9 +17,9 @@
         "babel-plugin-transform-es2015-modules-commonjs": "^6.8.0",
         "babel-plugin-transform-es2015-parameters": "^6.8.0",
         "eslint-plugin-babel": "^3.2.0",
+        "ghooks": "^1.2.1",
         "isparta": "^4.0.0",
         "mocha": "^2.4.5",
-        "opentracing": "^0.9.18",
         "should": "^8.3.1"
     },
     "license": "MIT",
@@ -27,15 +27,24 @@
         "debug": "^2.2.0"
     },
     "scripts": {
-        "debug": "./node_modules/.bin/mocha --debug-brk --require should test",
+        "prebuild": "rm -rf dist",
         "build": "babel src -d dist --copy-files",
         "lint": "eslint .",
         "test": "NODE_ENV=test babel-node ./node_modules/.bin/_mocha --reporter spec $npm_package_options_mocha 'src/**/*.spec.js'",
         "test-cov": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report html _mocha -- $npm_package_options_mocha 'src/**/*.spec.js'",
         "test-travis": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report lcovonly _mocha -- $npm_package_options_mocha 'src/**/*.spec.js'",
-        "preversion": "npm run build"
+        "prepublish": "npm run build",
+        "np": "resources/np"
     },
     "options": {
-        "mocha": "--require ./resources/mocha-bootload --check-leaks --full-trace"
+        "mocha": "--require resources/mocha-bootload --check-leaks --full-trace"
+    },
+    "config": {
+        "ghooks": {
+            "pre-commit": "npm run build && npm run lint && npm run test-cov"
+        },
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
     }
 }
