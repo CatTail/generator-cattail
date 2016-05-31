@@ -144,7 +144,7 @@ module.exports = {
         "no-obj-calls": 2,
         "no-octal": 2,
         "no-octal-escape": 2,
-        "no-param-reassign": 2,
+        "no-param-reassign": 0,
         "no-path-concat": 2,
         "no-plusplus": 0,
         "no-process-env": 0,
