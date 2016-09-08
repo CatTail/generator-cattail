@@ -76,7 +76,7 @@ module.exports = {
         "linebreak-style": 2,
         "lines-around-comment": 0,
         "max-depth": 0,
-        "max-len": [2, 80, 4, {ignoreComments: true}],
+        "max-len": [2, 120, 4, {ignoreComments: true}],
         "max-nested-callbacks": 0,
         "max-params": 0,
         "max-statements": 0,
