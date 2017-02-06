@@ -61,8 +61,6 @@ var CattailGenerator = yeoman.generators.NamedBase.extend({
         this.directory('resources', 'resources')
         this.copy('_babelrc', '.babelrc')
         this.copy('_editorconfig', '.editorconfig')
-        this.copy('_eslintignore', '.eslintignore')
-        this.copy('_eslintrc.js', '.eslintrc.js')
         this.copy('_gitignore', '.gitignore')
         this.template('_package.json', 'package.json', this.data)
         this.copy('_travis.yml', '.travis.yml')

@@ -20,7 +20,8 @@
     "eslint-plugin-babel": "^3.2.0",
     "ghooks": "^1.2.1",
     "isparta": "^4.0.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "standard": "^8.6.0"
   },
   "license": "MIT",
   "dependencies": {
@@ -29,7 +30,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "babel src -d dist --copy-files",
-    "lint": "eslint .",
+    "lint": "standard",
     "pretest": "npm run build",
     "test": "NODE_ENV=test babel-node ./node_modules/.bin/_mocha --reporter spec $npm_package_options_mocha 'src/**/*.spec.js'",
     "test-cov": "NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --root src --report html _mocha -- $npm_package_options_mocha 'src/**/*.spec.js'",
@@ -47,5 +48,15 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist",
+      "coverage"
+    ],
+    "envs": [
+      "mocha"
+    ]
   }
 }
